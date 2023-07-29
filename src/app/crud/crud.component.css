@@ -1,0 +1,179 @@
+body,html{
+    margin: 0;
+    background-color: #f6fcef;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.pageHeading{
+text-align: center;
+/* margin-top: 3rem; */
+font-size: 3rem;
+
+}
+.pageContainer{
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    margin: 3rem;
+    gap:5rem;
+    
+}
+.pageSubHeading{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: -1.1rem;
+    font-weight: 500;
+}
+.formContainer{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    gap:2rem;
+    background: #E2F6CA;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #b5c5a2;
+}
+.formField{
+    display: block;
+    width: 90%;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+   
+}
+.formBtnContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;  
+}
+.Formbtn{
+    border: none;
+    font-size: 0.9rem;
+    background: #862B0D;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 2rem;
+}
+.Formbtn:hover,.editBtn:hover{
+    background: #fff;
+    color: #862B0D;
+}
+.takDisplayBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.Displaybtn{
+    border: none;
+    font-size: 0.8rem;
+    background: #cbddb6;
+    
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem 2rem;
+}
+.Displaybtn:hover{
+    
+    border: 2px solid #889479;
+}
+.columnHead{
+    font-size: 1rem;
+}
+.editBtnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tasks{
+    color: black;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem;
+    background: #E2F6CA;
+    border: 2px solid #b5c5a2;
+
+}
+
+.taskDisplayContainer{
+    margin-top: 1rem;
+    overflow-y: scroll;
+    height: 59vh;
+}
+.taskDisplayContainer::-webkit-scrollbar { 
+    display: none;
+}
+.displayFooter{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.editBtnContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+}
+.editBtn{
+    background: #862B0D;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 1.3rem;
+    border-radius: 5px;
+}
+.taskheadingContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+.taskIcon{
+    width: 2rem;
+    height: auto;
+}
+.displayTaskHeading,.addTaskSubHeading{
+    text-align: center;
+}
+.addTaskSubHeading{
+    color: #5a6251;
+}
+
+@media (max-width: 65rem) {
+    .pageContainer{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 3rem 1rem;
+        gap:5rem;
+        
+    }
+    .displayTaskHeading{
+        color: #862B0D;
+    }
+    .displayFooter{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+}
+@media (max-width: 25rem) {
+    .takDisplayBtnContainer{
+        gap: 1rem;
+    }
+    .Displaybtn{
+        font-size: 0.6rem;
+        padding: 0.5rem 0.8rem;
+    }
+}

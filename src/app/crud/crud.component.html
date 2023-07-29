@@ -1,0 +1,71 @@
+<body>
+  <h1 class="pageHeading">Task Manager</h1>
+  <h2 class="pageSubHeading">Now manage you daily tasks more effectively!</h2>
+  <div class="pageContainer">
+    <div class="addTaskContainer">
+      <h1 class="displayTaskHeading">Add Task</h1>
+      <h3 class="addTaskSubHeading">Organize, prioritize, and conquer tasks effortlessly</h3>
+      <form class="formContainer">
+        <input type="text" [(ngModel)]="title" class="formField" id="title" aria-describedby="emailHelp"
+          name="tasktitle" placeholder="Enter Title">
+
+        <input type="text" [(ngModel)]="desc" class="formField" id="desc" aria-describedby="emailHelp" name="taskdesc"
+          placeholder="Description">
+
+        <input type="text" [(ngModel)]="due_date" class="formField" id="due-date" aria-describedby="emailHelp"
+          name="taskduedate" placeholder="Due-Date">
+
+        <input type="text" [(ngModel)]="priority_levels" class="formField" id="priority-level"
+          aria-describedby="emailHelp" name="taskprioritylevel" placeholder="Priority Level -- eg.(Low, Medium, High)">
+
+
+
+        <input type="text" [(ngModel)]="status" class="formField" id="status" aria-describedby="emailHelp"
+          name="taskstatus" placeholder="Current Status -- eg.(Todo, InProgress, Completed)">
+
+        <div class="formBtnContainer">
+          <button type="submit" class="Formbtn" (click)="saveTask()">Add Task</button>
+          <button type="submit" class="Formbtn" (click)="UpdateRecords()">Update</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+    <div>
+      <h1 class="displayTaskHeading">Your Tasks</h1>
+      <div class="takDisplayBtnContainer">
+        <button type="submit" class="Displaybtn" (click)="sortBypriority()">Sort By Priority Levels</button>
+        <button type="submit" class="Displaybtn" (click)="sortByStatus()">Sort By Status</button>
+        <button type="submit" class="Displaybtn" (click)="exportCSV()">Export Tasks to CSV</button>
+        <button type="submit" class="Displaybtn" (click)="exportHistoryLog()">Export History Log to CSV</button>
+      </div>
+
+      <div class="taskDisplayContainer">
+        <div class="tasks" *ngFor="let task of Tasks">
+          <div class="taskheadingContainer">
+            <img src="../../assets/images/taskIcon.png" alt="task icon" class="taskIcon" />
+            <h3>{{task.title}}</h3>
+          </div>
+
+          <p>L{{task.desc}}</p>
+          <div class="displayFooter">
+
+            <div class="taskInfoContainer">
+              <span style="margin-right: 20px;">{{task.due_date}}</span>
+              <span style="margin-right: 20px;">{{task.priority_levels}}</span>
+              <span>{{task.status}}</span>
+            </div>
+
+            <div class="editBtnContainer">
+              <button style="float: right;" (click)="setDelete(task)" class="editBtn">Delete</button>
+              <button style="float: right;" (click)="setUpdate(task)" class="editBtn">Edit</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
