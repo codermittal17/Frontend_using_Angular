@@ -42,7 +42,7 @@ export class CrudComponent {
       
       this.History_Log.push({'Change_Made':'Added Task'});
   
-      this.http.post("http://127.0.0.1:8000/task", data).subscribe((resultData:any)=>{
+      this.http.post("https://raghvendramittal.pythonanywhere.com/task", data).subscribe((resultData:any)=>{
         alert("Added Successfully!!");
         this.getAllTask();
       })
@@ -52,7 +52,7 @@ export class CrudComponent {
   }
 
   getAllTask(){
-    this.http.get("http://127.0.0.1:8000/task").subscribe((resultData:any)=>{
+    this.http.get("https://raghvendramittal.pythonanywhere.com/task").subscribe((resultData:any)=>{
       this.Tasks = resultData.reverse();
       this.title = "";
       this.desc = "";
@@ -93,7 +93,7 @@ export class CrudComponent {
       
       this.History_Log.push({'Change_Made':'Updated the Task'});
   
-      this.http.put("http://127.0.0.1:8000/task/"+ this.current_task_id, data).subscribe((resultData:any)=>{
+      this.http.put("https://raghvendramittal.pythonanywhere.com/task/"+ this.current_task_id, data).subscribe((resultData:any)=>{
         alert("Updated Successfully!!");
         this.title = "";
         this.desc = "";
@@ -107,7 +107,7 @@ export class CrudComponent {
   }
 
   setDelete(data:any){
-    this.http.delete("http://127.0.0.1:8000/task" + "/"+data.id).subscribe((resultData:any)=>{
+    this.http.delete("https://raghvendramittal.pythonanywhere.com/task" + "/"+data.id).subscribe((resultData:any)=>{
       alert("Task Deleted");
       this.History_Log.push({'Change_Made':'Deleted the Task'});
       this.getAllTask();
@@ -143,7 +143,7 @@ export class CrudComponent {
   }
 
   exportCSV(){
-    this.http.get("http://127.0.0.1:8000/task").subscribe((resultData:any)=>{
+    this.http.get("https://raghvendramittal.pythonanywhere.com/task").subscribe((resultData:any)=>{
       let options = {
         title:'User Details',
         fieldSeparator:',',
